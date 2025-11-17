@@ -13,6 +13,9 @@ export const mastra = new Mastra({
   workflows: { weatherWorkflow, analyticsWorkflow },
   agents: { weatherAgent, analyticsAgent },
   scorers: { toolCallAppropriatenessScorer, completenessScorer, translationScorer },
+  bundler: {
+    externals: ['supports-color', 'difflib'],
+  },
   storage: new LibSQLStore({
     // stores observability, scores, ... into memory storage, if it needs to persist, change to file:../mastra.db
     url: ":memory:",
